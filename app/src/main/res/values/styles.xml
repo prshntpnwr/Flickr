@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="BottomAppbarTheme">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="ChipTextRegularStyle">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:checkable">true</item>
+    </style>
+
+    <style name="ExpandedTitleTextAppearance" parent="@android:style/TextAppearance.Large">
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+</resources>

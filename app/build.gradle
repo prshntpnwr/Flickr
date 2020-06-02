@@ -1,0 +1,95 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'androidx.navigation.safeargs'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.myapp"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    androidExtensions {
+        experimental = true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.support.annotations
+    implementation deps.support.app_compat
+    implementation deps.support.cardview
+    implementation deps.support.design
+    implementation deps.lifecycle.extensions
+    implementation deps.support.grid_layout
+    implementation deps.retrofit.gson
+    implementation deps.gson
+    implementation deps.glide
+    implementation deps.lifecycle.java8
+    implementation deps.room.runtime
+    implementation deps.lifecycle.runtime
+    implementation deps.retrofit.runtime
+    implementation deps.kotlin.stdlib
+//    implementation deps.material.material
+
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.android_support_compiler
+    kapt deps.dagger.compiler
+    implementation deps.support.recyclerview
+    implementation deps.paging
+    implementation deps.support.v4
+    implementation deps.support.constraint_layout
+    implementation deps.support.multidex
+    implementation deps.navigation.fragment_ktx
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.0.0'
+    kapt(deps.room.compiler, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    kapt deps.lifecycle.compiler
+    androidTestImplementation(deps.espresso.core, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    })
+    androidTestImplementation(deps.espresso.contrib, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+    })
+    androidTestImplementation deps.support.test_runner
+    androidTestImplementation deps.espresso.intents
+
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.3'
+}

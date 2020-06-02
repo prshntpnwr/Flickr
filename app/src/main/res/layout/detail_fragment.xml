@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.example.myapp.observer.DetailViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.example.myapp.util.TouchImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                app:imageUrl="@{viewModel.result.data.thumbnail}" />
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:contentInsetStart="@dimen/activity_horizontal_margin"
+                app:title="@null"
+                android:background="@color/translucent"
+                app:navigationIcon="@drawable/avd_arrow_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/translucent"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:layout_gravity="bottom"
+                android:gravity="start"
+                android:textColor="@android:color/white"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:shadowColor="@android:color/black"
+                android:text="@{viewModel.result.data.title}"
+                tools:text="This is a title"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>
