@@ -12,16 +12,16 @@ Screenshots :
 
 <img width="40%" src="/art/detail.png" />
 
-Used Libraries:
-	- Kotlin as main development language
-	- MVVM as architecture component
-	- Room for data persistence
-	- Retrofit for making Network calls
-	- Jetpack Navigation for fragment transactions
-	- Paging Library for loading data gradually
-	- Glide for image caching and loading
-	- AndroidX components
-	- Updated Material design guidelines. Used collapsing Toolbar, CardView and Recyclerview.
+### Used Libraries:
+- Kotlin as main development language
+- MVVM as architecture component
+- Room for data persistence
+- Retrofit for making Network calls
+- Jetpack Navigation for fragment transactions
+- Paging Library for loading data gradually
+- Glide for image caching and loading
+- AndroidX components
+- Updated Material design guidelines. Used collapsing Toolbar, CardView and Recyclerview.
 
 Download <a href="/art/app-debug.apk">APK</a>
 
