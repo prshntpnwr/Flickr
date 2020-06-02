@@ -23,7 +23,7 @@ Screenshots :
 - AndroidX components
 - Updated Material design guidelines. Used collapsing Toolbar, CardView and Recyclerview.
 
-Download <a href="/art/app-debug.apk">APK</a>
+Download <a href="https://github.com/prshntpnwr/Flickr/releases/tag/releasev1">APK release</a>
 
 ## License
 
